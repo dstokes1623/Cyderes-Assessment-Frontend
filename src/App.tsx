@@ -15,7 +15,7 @@ const App = () => {
     setDomainData(null);
     setIsLoading(true);
 
-    const apiUrl = `http://localhost:8000/v1/whois/${data.domain}`
+    const apiUrl = `https://stokes-cyderes-api.herokuapp.com/v1/whois/${data.domain}`
     const domainData = await fetch(apiUrl);
     if(domainData.status !== 200) {
       setIsLoading(false)

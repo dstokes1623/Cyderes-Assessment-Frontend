@@ -1,7 +1,5 @@
 import Card from "../Card";
 import DomainDataListItem from "./DomainDataListItem";
-import styled from "styled-components";
-
 interface SubRecord {
     registrant: {
         country: string;
@@ -36,10 +34,6 @@ interface DomainDataShape {
     }  
 }
 
-const ListItem = styled.li`
-    font-size: 16px;
-    margin: 8px 0px 8px 0px;
-`
 const DomainDataList = (props: DomainDataShape) => {
     const {
         domainData
