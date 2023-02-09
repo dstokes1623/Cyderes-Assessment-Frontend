@@ -14,7 +14,8 @@ interface SubRecord {
         ips: string[];
         rawText: string;
     };
-}
+};
+
 interface DomainDataShape {
     domainData: {
         registrant: {
@@ -31,19 +32,18 @@ interface DomainDataShape {
             rawText: string;
         };
         subRecords: SubRecord[];
-    }  
-}
+    };
+};
 
 const DomainDataList = (props: DomainDataShape) => {
-    const {
-        domainData
-    } = props;
+    const { domainData } = props;
 
     let subRecords = domainData.subRecords;
     let listItems: JSX.Element[] = [];
+
     if (subRecords && subRecords.length > 0) { 
         listItems = subRecords.map((record, idx) => {
-            const {registrant: { country, organization, state}, domainName} = record;
+            const { registrant: { country, organization, state}, domainName } = record;
             const hostNames = record.nameServers ? record.nameServers.hostNames : [];
             const ips = record.nameServers ? record.nameServers.ips : [];
 
@@ -56,14 +56,14 @@ const DomainDataList = (props: DomainDataShape) => {
                         hostNames={hostNames} 
                         ips={ips} 
                     />
-        })
-    }
+        });
+    };
     
     //Check if nameServers was returned as not all domains/ips have this available
     const nameServers = domainData.nameServers ? domainData.nameServers : null;
-
     const hostNames = nameServers ? nameServers.hostNames : [];
     const ips = nameServers ? nameServers.ips : [];
+
     return (
         <Card>
             {listItems.length > 0 

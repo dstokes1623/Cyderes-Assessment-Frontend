@@ -15,10 +15,10 @@ const App = () => {
     setDomainData(null);
     setIsLoading(true);
 
-    const apiUrl = `https://stokes-cyderes-api.herokuapp.com/v1/whois/${data.domain}`
+    const apiUrl = `https://stokes-cyderes-api.herokuapp.com/v1/whois/${data.domain}`;
     const domainData = await fetch(apiUrl);
     if(domainData.status !== 200) {
-      setIsLoading(false)
+      setIsLoading(false);
       setError('Unable to retrieve domain data');
 
       return;

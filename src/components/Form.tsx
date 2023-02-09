@@ -11,6 +11,7 @@ const Label = styled.label`
     margin-bottom: 10px;
     font-size: 20px;
 `;
+
 const Input = styled.input`
      padding: 10px;
      font-size: 24px;
@@ -25,7 +26,6 @@ const ControlWrapper = styled.div`
 const ButtonWrapper = styled.span`
     text-align: right;
     margin-left: 8px;
-
 `;
 
 const Button = styled.button`
@@ -47,14 +47,13 @@ const Button = styled.button`
         border-color: #525252
     }
 `;
+
 interface FormProps  {
     onSubmit: SubmitHandler<FormData>;
 };
 
 const Form = (props: FormProps) => {
     const { register, handleSubmit } = useForm<FormData>();
-
-    
 
     return (
         <Card>
