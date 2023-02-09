@@ -44,8 +44,8 @@ const DomainDataList = (props: DomainDataShape) => {
     if (subRecords && subRecords.length > 0) { 
         listItems = subRecords.map((record, idx) => {
             const { registrant: { country, organization, state}, domainName } = record;
-            const hostNames = record.nameServers ? record.nameServers.hostNames : [];
-            const ips = record.nameServers ? record.nameServers.ips : [];
+            const hostNames = record.nameServers.hostNames ? record.nameServers.hostNames : [];
+            const ips = record.nameServers.hostNames ? record.nameServers.ips : [];
 
             return <DomainDataListItem 
                         key={`domain-item-${idx + 1}`} 
